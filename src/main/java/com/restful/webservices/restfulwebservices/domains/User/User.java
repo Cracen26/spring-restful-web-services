@@ -2,9 +2,14 @@ package com.restful.webservices.restfulwebservices.domains.User;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 public class User {
     private int id = 0;
+    @Size(min = 2)
     private String name;
+    @Past
     private Date birthDate;
 
     public User(int id, String name, Date birthDate) {
