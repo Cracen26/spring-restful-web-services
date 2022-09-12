@@ -2,14 +2,16 @@ package com.restful.webservices.restfulwebservices.domains.User;
 
 import java.util.Date;
 
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity(name = "user")
 public class User {
-    private int id = 0;
-    @Size(min = 2)
+    @Id
+    @GeneratedValue
+    private int id;
     private String name;
-    @Past
     private Date birthDate;
 
     public User(int id, String name, Date birthDate) {
